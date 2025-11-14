@@ -1,0 +1,112 @@
+html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Limoni Web</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://share.google/images/ZPCYSe9hYGexma7Lk');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      color: black;
+}
+
+    h1 {
+      color: yellow;
+      font-size: 3em;
+      margin-top: 50px;
+}
+
+    p {
+      font-size: 1.5em;
+      margin: 30px 0;
+}
+
+.button {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+}
+
+.red {
+      background-color: red;
+}
+
+.blue {
+      background-color: blue;
+}
+
+.green {
+      background-color: green;
+}
+
+.page {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      background-color: white;
+      color: black;
+      font-size: 3em;
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+
+.page img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 20px;
+}
+
+.visible {
+      display: flex;
+}
+  </style>
+</head>
+<body>
+  <h1>limoni web</h1>
+  <p>Pietro dice: signora i LIMONIIIIIIIIII</p>
+
+  <button class="button red" onclick="showPage('israeliano')">soldato israeliano</button>
+  <button class="button blue" onclick="showPage('palestinese')">soldato palestinese</button>
+  <br />
+  <button class="button green" onclick="showPage('iscriviti')">iscriviti</button>
+
+  <!-- Pagine nascoste -->
+  <div id="israeliano" class="page">
+    sei un soldato israeliano complimenti
+  </div>
+
+  <div id="palestinese" class="page">
+    sei un soldato palestinese complimenti
+  </div>
+
+  <div id="iscriviti" class="page">
+    <img src="https://share.google/images/thsnAPx1ljZvwBRdW" alt="Iscrizione" />
+    <div style="background-color:white; color:black; font-weight:bold;">FANCULLO PANZONE</div>
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
+      document.getElementById(id).classList.add('visible');
+      window.scrollTo(0, 0);
+}
+  </script>
+</body>
+</html>
