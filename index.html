@@ -41,74 +41,18 @@
       text-decoration: none;
 }
 
-.red {
-      background-color: red;
-}
-
-.blue {
-      background-color: blue;
-}
-
-.green {
-      background-color: green;
-}
-
-.page {
-      display: none;
-      height: 100vh;
-      width: 100vw;
-      background-color: white;
-      color: black;
-      font-size: 2.5em;
-      font-weight: bold;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 20px;
-}
-
-.page img {
-      max-width: 80%;
-      height: auto;
-      margin-bottom: 20px;
-}
-
-.visible {
-      display: flex;
-}
+.red { background-color: red;}
+.blue { background-color: blue;}
+.green { background-color: green;}
   </style>
 </head>
 <body>
   <h1>limoni web</h1>
   <p>Pietro dice: signora i LIMONIIIIIIIIII</p>
 
-  <button class="button red" onclick="showPage('israeliano')">soldato israeliano</button>
-  <button class="button blue" onclick="showPage('palestinese')">soldato palestinese</button>
+  <a href="israeliano.html" class="button red">soldato israeliano</a>
+  <a href="palestinese.html" class="button blue">soldato palestinese</a>
   <br />
-  <button class="button green" onclick="showPage('iscriviti')">iscriviti</button>
-
-  <!-- Pagine nascoste -->
-  <div id="israeliano" class="page">
-    sei un soldato israeliano complimenti Kolione.<br />
-    Vuoi fregare Mr Chow? FANCULOOOO!!!
-  </div>
-
-  <div id="palestinese" class="page">
-    sei un soldato palestinese complimenti Kolione.<br />
-    Vuoi fregare Mr Chow? FANCULOOOO!!!
-  </div>
-
-  <div id="iscriviti" class="page">
-    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80" alt="Iscrizione" />
-    <div style="background-color:white; color:black; font-weight:bold;">FANCULLO PANZONE</div>
-  </div>
-
-  <script>
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
-      document.getElementById(id).classList.add('visible');
-      window.scrollTo(0, 0);
-}
-  </script>
+  <a href="iscriviti.html" class="button green">iscriviti</a>
 </body>
 </html>
