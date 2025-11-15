@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 /* NAVBAR */
 .navbar {
     width: 100%;
-    padding: 12px 25px;
+    padding: 14px 25px;
     background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(6px);
     display: flex;
@@ -38,19 +38,21 @@ a{color:inherit;text-decoration:none}
     z-index: 9999;
 }
 
-/* Logo */
-.navbar .logo {
-    font-size: 26px;
+.navbar * {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
     font-weight: 900;
     color: yellow;
     text-shadow: 0 0 3px black;
     letter-spacing: 2px;
 }
 
-/* Link menu */
 .nav-links {
     list-style: none;
-    display: flex;
     gap: 25px;
 }
 
@@ -59,7 +61,6 @@ a{color:inherit;text-decoration:none}
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
-    padding: 5px 10px;
     transition: 0.3s;
 }
 
@@ -68,14 +69,38 @@ a{color:inherit;text-decoration:none}
     text-shadow: 0 0 5px black;
 }
 
-/* Social icons */
 .social-icons img {
     width: 32px;
     height: 32px;
     margin-left: 15px;
-    cursor: pointer;
     filter: drop-shadow(0 0 4px black);
     transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+}
+
+.lang-switch button {
+    margin-left: 12px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .logo {
+        font-size: 22px;
+    }
+    .nav-links li a {
+        font-size: 17px;
+    }
 }
 
 .about-container {
