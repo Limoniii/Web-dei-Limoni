@@ -169,6 +169,27 @@ a{color:inherit;text-decoration:none}
   margin-bottom:6px;
 }
 
+.about-bg {
+    width: 100%;
+    height: 100vh;
+    background: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWl1ZnZsOHh2bWloZWF3ZXFmNXptdDRhN2F6YzQyd2FlbW9qcDN4cSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTiTnIilwuFFFpf2Cc/giphy.gif")
+                center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.about-text {
+    max-width: 900px;
+    font-size: 35px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.4;
+    -webkit-text-stroke: 1px black;
+}
+
 /* Title style */
 h1.title {
   margin:0;
