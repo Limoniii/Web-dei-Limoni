@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limoni Web - Home</title>
+    <title>Limoni Web</title>
     <link rel="stylesheet" href="style.css">
-    <script src="translate.js" defer></script>
-    <script src="sounds.js" defer></script>
+    <script defer src="translate.js"></script>
 </head>
 
-<body>
+<body class="lemons-bg">
 
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">🍋 LIMONI WEB</div>
 
         <ul class="nav-links">
-            <li><a data-key="home" href="index.html">Home</a></li>
-            <li><a data-key="about" href="about.html">About</a></li>
+            <li><a href="index.html" data-key="home"></a></li>
+            <li><a href="about.html" data-key="about"></a></li>
         </ul>
 
         <div class="social-icons">
-            <a href="https://instagram.com" target="_blank"><img src="icons/ig.png"></a>
-            <a href="https://tiktok.com" target="_blank"><img src="icons/tiktok.png"></a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="https://img.icons8.com/fluency/48/instagram-new.png">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="https://img.icons8.com/fluency/48/tiktok.png">
+            </a>
         </div>
 
-        <div class="lang-switch">
-            <button onclick="setLanguage('it')">🇮🇹</button>
-            <button onclick="setLanguage('en')">🇬🇧</button>
+        <!-- MENU LINGUE -->
+        <div class="language-dropdown">
+            <button class="lang-btn">🌍</button>
+            <div class="lang-menu">
+                <div onclick="setLanguage('it')">🇮🇹 Italiano</div>
+                <div onclick="setLanguage('en')">🇬🇧 English</div>
+                <div onclick="setLanguage('es')">🇪🇸 Español</div>
+                <div onclick="setLanguage('fr')">🇫🇷 Français</div>
+                <div onclick="setLanguage('de')">🇩🇪 Deutsch</div>
+                <div onclick="setLanguage('ru')">🇷🇺 Русский</div>
+                <div onclick="setLanguage('zh')">🇨🇳 中文</div>
+            </div>
         </div>
-
-        <button class="mode-btn" onclick="toggleMode()">🌓</button>
     </nav>
 
-    <!-- CONTENT -->
-    <section class="main-content">
-        <h1 data-key="welcome">Benvenuto su Limoni Web</h1>
-        <p data-key="desc">Il sito più folle, veloce e imprevedibile dell’universo digitale.</p>
-    </section>
+    <div class="main-content">
+        <h1 data-key="welcome"></h1>
+        <p data-key="description"></p>
+
+        <button class="btn red" onclick="location.href='israeliano.html'">Soldato Israeliano</button>
+        <button class="btn blue" onclick="location.href='palestinese.html'">Soldato Palestinese</button>
+        <button class="btn green" onclick="location.href='iscriviti.html'" data-key="signup"></button>
+    </div>
 
     <!-- FOOTER -->
     <footer>
-        <h2>WEBSITE CREATED BY: I DON’T KNOW!!!</h2>
-        <p>Tutti i diritti riservati a I DON'T KNOW</p>
-        <p>Telefono: +39 0123456789</p>
-        <p>Email: idontknow@blabla.hehe</p>
+        <h2 data-key="footerTitle"></h2>
+        <p data-key="footerRights"></p>
+        <p data-key="footerPhone"></p>
+        <p data-key="footerEmail"></p>
     </footer>
 
 </body>
