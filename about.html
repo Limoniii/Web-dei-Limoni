@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Limoni Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="translate.js" defer></script>
+    <script src="sounds.js" defer></script>
+</head>
+
+<body class="about-bg">
+
+    <nav class="navbar">
+        <div class="logo">🍋 LIMONI WEB</div>
+
+        <ul class="nav-links">
+            <li><a data-key="home" href="index.html">Home</a></li>
+            <li><a data-key="about" href="about.html">About</a></li>
+        </ul>
+
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"><img src="icons/ig.png"></a>
+            <a href="https://tiktok.com" target="_blank"><img src="icons/tiktok.png"></a>
+        </div>
+
+        <div class="lang-switch">
+            <button onclick="setLanguage('it')">🇮🇹</button>
+            <button onclick="setLanguage('en')">🇬🇧</button>
+        </div>
+
+        <button class="mode-btn" onclick="toggleMode()">🌓</button>
+    </nav>
+
+    <div class="about-text" data-key="aboutText">
+        Limoni Web è come Chow: imprevedibile, brillante e con un tocco di follia.
+        Fratello, questo sito è così veloce che neanche Jackie Chan riesce a starci dietro!
+    </div>
+
+</body>
+</html>
