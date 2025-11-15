@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LIMONI WEB</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="translate.js"></script>
+</head>
+<body class="page-home">
+
+  <!-- background GIF element (kept in HTML to ensure cover on mobile) -->
+  <img class="bg-gif" src="https://images.unsplash.com/photo-1508747703725-719777637510?q=80&w=1600&auto=format&fit=crop" alt="limoni background">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo">🍋 <span class="logo-text">LIMONI WEB</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="home">Home</a></li>
+        <li><a href="about.html" data-i18n="about">About</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+      <div class="social-icons">
+        <a href="https://instagram.com" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="IG"></a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TT"></a>
+      </div>
+
+      <div class="language-dropdown" id="langDropdown">
+        <button class="lang-btn" id="langBtn">🌍</button>
+        <div class="lang-menu" id="langMenu" aria-hidden="true">
+          <button data-lang="it">🇮🇹 Italiano</button>
+          <button data-lang="en">🇬🇧 English</button>
+          <button data-lang="es">🇪🇸 Español</button>
+          <button data-lang="fr">🇫🇷 Français</button>
+          <button data-lang="de">🇩🇪 Deutsch</button>
+          <button data-lang="ru">🇷🇺 Русский</button>
+          <button data-lang="zh">🇨🇳 中文</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="content" role="main">
+    <h1 class="title" data-i18n="welcome">Benvenuto su Limoni Web</h1>
+    <p class="subtitle" data-i18n="description">Il sito più folle, veloce e imprevedibile dell’universo digitale.</p>
+
+    <div class="main-buttons">
+      <a class="btn red" href="israeliano.html" data-i18n="israel">Soldato Israeliano</a>
+      <a class="btn blue" href="palestinese.html" data-i18n="palestine">Soldato Palestinese</a>
+      <a class="btn green" href="iscriviti.html" data-i18n="subscribe">Iscriviti</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-big" data-i18n="footerBig">WEBSITE CREATED BY: I DON’T KNOW!!!</div>
+    <div class="footer-small" data-i18n="footerSmall">Tutti i diritti riservati a I DON’T KNOW</div>
+    <div class="footer-small" data-i18n="phone">Telefono: +39 0123456789</div>
+    <div class="footer-small" data-i18n="email">Email: idontknow@blabla.hehe</div>
+  </footer>
+
+</body>
+</html>
