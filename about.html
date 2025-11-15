@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Limoni Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="translate.js"></script>
+</head>
 
+<body class="about-bg">
+
+    <!-- NAVBAR (COPIATA UGUALE) -->
+    <nav class="navbar">
+        <div class="logo">🍋 LIMONI WEB</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" data-key="home"></a></li>
+            <li><a href="about.html" data-key="about"></a></li>
+        </ul>
+
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="https://img.icons8.com/fluency/48/instagram-new.png">
+            </a>
+            <a href="https://tiktok.com" target="_blank">
+                <img src="https://img.icons8.com/fluency/48/tiktok.png">
+            </a>
+        </div>
+
+        <div class="language-dropdown">
+            <button class="lang-btn">🌍</button>
+            <div class="lang-menu">
+                <div onclick="setLanguage('it')">🇮🇹 Italiano</div>
+                <div onclick="setLanguage('en')">🇬🇧 English</div>
+                <div onclick="setLanguage('es')">🇪🇸 Español</div>
+                <div onclick="setLanguage('fr')">🇫🇷 Français</div>
+                <div onclick="setLanguage('de')">🇩🇪 Deutsch</div>
+                <div onclick="setLanguage('ru')">🇷🇺 Русский</div>
+                <div onclick="setLanguage('zh')">🇨🇳 中文</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="about-text" data-key="aboutText"></div>
+
+    <footer>
+        <h2 data-key="footerTitle"></h2>
+        <p data-key="footerRights"></p>
+        <p data-key="footerPhone"></p>
+        <p data-key="footerEmail"></p>
+    </footer>
+
+</body>
+</html>
