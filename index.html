@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limoni Web - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="translate.js" defer></script>
+    <script src="sounds.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🍋 LIMONI WEB</div>
+
+        <ul class="nav-links">
+            <li><a data-key="home" href="index.html">Home</a></li>
+            <li><a data-key="about" href="about.html">About</a></li>
+        </ul>
+
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"><img src="icons/ig.png"></a>
+            <a href="https://tiktok.com" target="_blank"><img src="icons/tiktok.png"></a>
+        </div>
+
+        <div class="lang-switch">
+            <button onclick="setLanguage('it')">🇮🇹</button>
+            <button onclick="setLanguage('en')">🇬🇧</button>
+        </div>
+
+        <button class="mode-btn" onclick="toggleMode()">🌓</button>
+    </nav>
+
+    <!-- CONTENT -->
+    <section class="main-content">
+        <h1 data-key="welcome">Benvenuto su Limoni Web</h1>
+        <p data-key="desc">Il sito più folle, veloce e imprevedibile dell’universo digitale.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>WEBSITE CREATED BY: I DON’T KNOW!!!</h2>
+        <p>Tutti i diritti riservati a I DON'T KNOW</p>
+        <p>Telefono: +39 0123456789</p>
+        <p>Email: idontknow@blabla.hehe</p>
+    </footer>
+
+</body>
+</html>
