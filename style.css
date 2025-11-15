@@ -200,3 +200,62 @@ p.lead{
 
 /* focus outlines */
 .btn:focus{outline:3px solid rgba(255,255,255,0.12); outline-offset:3px}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 12px 25px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: yellow;
+    text-shadow: 0 0 3px black;
+    letter-spacing: 2px;
+}
+
+/* Link menu */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: yellow;
+    text-shadow: 0 0 5px black;
+}
+
+/* Social icons */
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    margin-left: 15px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 4px black);
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+}
