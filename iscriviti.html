@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iscriviti</title>
     <link rel="stylesheet" href="style.css">
-    <script src="translate.js" defer></script>
-    <script src="sounds.js" defer></script>
+    <script defer src="translate.js"></script>
 </head>
 
 <body class="iscriviti-bg">
@@ -15,16 +14,36 @@
         <div class="logo">🍋 LIMONI WEB</div>
 
         <ul class="nav-links">
-            <li><a data-key="home" href="index.html">Home</a></li>
-            <li><a data-key="about" href="about.html">About</a></li>
+            <li><a href="index.html" data-key="home"></a></li>
+            <li><a href="about.html" data-key="about"></a></li>
         </ul>
 
-        <button class="mode-btn" onclick="toggleMode()">🌓</button>
+        <div class="language-dropdown">
+            <button class="lang-btn">🌍</button>
+            <div class="lang-menu">
+                <div onclick="setLanguage('it')">🇮🇹 Italiano</div>
+                <div onclick="setLanguage('en')">🇬🇧 English</div>
+                <div onclick="setLanguage('es')">🇪🇸 Español</div>
+                <div onclick="setLanguage('fr')">🇫🇷 Français</div>
+                <div onclick="setLanguage('de')">🇩🇪 Deutsch</div>
+                <div onclick="setLanguage('ru')">🇷🇺 Русский</div>
+                <div onclick="setLanguage('zh')">🇨🇳 中文</div>
+            </div>
+        </div>
     </nav>
 
-    <section class="main-content">
-        <h1 data-key="signup">Iscriviti ora!</h1>
-    </section>
+    <div class="signup-text">
+        <h1>FANCULO PANZONE</h1>
+        <h3>Tu vuoi inculare me?</h3>
+        <p>Congelati, o ti faccio saltare le chiappe!!!</p>
+    </div>
+
+    <footer>
+        <h2 data-key="footerTitle"></h2>
+        <p data-key="footerRights"></p>
+        <p data-key="footerPhone"></p>
+        <p data-key="footerEmail"></p>
+    </footer>
 
 </body>
 </html>
