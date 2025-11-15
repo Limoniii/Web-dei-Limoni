@@ -1,67 +1,92 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>LIMONI WEB</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="translate.js"></script>
 </head>
-<body class="page-home">
+<body>
 
-  <!-- background GIF element (kept in HTML to ensure cover on mobile) -->
-  <img class="bg-gif" src="https://images.unsplash.com/photo-1508747703725-719777637510?q=80&w=1600&auto=format&fit=crop" alt="limoni background">
+  <div class="container" style="background-image:url('https://images.unsplash.com/photo-1508747703725-719777637510?q=80&w=1600&auto=format&fit=crop');">
+    <div class="card" role="main">
+      <!-- animated emoji layer -->
+      <div class="emoji-layer" id="emojiLayer" aria-hidden="true"></div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-left">
-      <div class="logo">🍋 <span class="logo-text">LIMONI WEB</span></div>
-      <ul class="nav-links">
-        <li><a href="index.html" data-i18n="home">Home</a></li>
-        <li><a href="about.html" data-i18n="about">About</a></li>
-      </ul>
-    </div>
-
-    <div class="nav-right">
-      <div class="social-icons">
-        <a href="https://instagram.com" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="IG"></a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TT"></a>
+      <!-- Logo + title -->
+      <div class="logo" aria-hidden="false">
+        <!-- multiple emoji will fall over the whole page; keep a small static lemon near title -->
+        <div style="font-size:34px; transform:translateY(6px);">🍋</div>
+        <h1 class="title">LIMONI WEB</h1>
       </div>
 
-      <div class="language-dropdown" id="langDropdown">
-        <button class="lang-btn" id="langBtn">🌍</button>
-        <div class="lang-menu" id="langMenu" aria-hidden="true">
-          <button data-lang="it">🇮🇹 Italiano</button>
-          <button data-lang="en">🇬🇧 English</button>
-          <button data-lang="es">🇪🇸 Español</button>
-          <button data-lang="fr">🇫🇷 Français</button>
-          <button data-lang="de">🇩🇪 Deutsch</button>
-          <button data-lang="ru">🇷🇺 Русский</button>
-          <button data-lang="zh">🇨🇳 中文</button>
-        </div>
+      <p class="lead">Signora i Limoni, SIGNORAAA!!!</p>
+
+      <div class="btns" role="navigation" aria-label="Seleziona opzione">
+        <button class="btn red" onclick="location.href='israeliano.html'">Soldato Israeliano</button>
+        <button class="btn blue" onclick="location.href='palestinese.html'">Soldato Palestinese</button>
+        <button class="btn green" onclick="location.href='iscriviti.html'">Iscriviti</button>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <!-- MAIN -->
-  <main class="content" role="main">
-    <h1 class="title" data-i18n="welcome">Benvenuto su Limoni Web</h1>
-    <p class="subtitle" data-i18n="description">Il sito più folle, veloce e imprevedibile dell’universo digitale.</p>
+<script>
+/* JS to create falling emoji lemons (lightweight, responsive).
+   Generates N emoji with varying speeds/positions.
+*/
+(function(){
+  const layer = document.getElementById('emojiLayer');
+  if(!layer) return;
+  const count = Math.min(24, Math.max(10, Math.floor(window.innerWidth/40))); // adapt to screen
+  for(let i=0;i<count;i++){
+    const el = document.createElement('div');
+    el.className = 'emoji';
+    el.textContent = '🍋';
+    // random start and end x positions (in vw)
+    const startX = Math.random()*100;
+    const sway = (Math.random()*18 - 9); // sideways drift
+    const endX = startX + sway;
+    // random duration
+    const dur = (Math.random()*10 + 6).toFixed(2) + 's';
+    // random delay so they start scattered
+    const delay = (Math.random()*6).toFixed(2) + 's';
+    // random size
+    const size = Math.floor(Math.random()*18 + 18); // px
+    el.style.fontSize = size + 'px';
+    el.style.left = startX + 'vw';
+    el.style.setProperty('--start-x', startX + 'vw');
+    el.style.setProperty('--end-x', endX + 'vw');
+    el.style.setProperty('--fall', Math.floor(window.innerHeight*0.9) + 'px');
+    el.style.animationDuration = dur;
+    el.style.animationDelay = delay;
+    layer.appendChild(el);
 
-    <div class="main-buttons">
-      <a class="btn red" href="israeliano.html" data-i18n="israel">Soldato Israeliano</a>
-      <a class="btn blue" href="palestinese.html" data-i18n="palestine">Soldato Palestinese</a>
-      <a class="btn green" href="iscriviti.html" data-i18n="subscribe">Iscriviti</a>
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-big" data-i18n="footerBig">WEBSITE CREATED BY: I DON’T KNOW!!!</div>
-    <div class="footer-small" data-i18n="footerSmall">Tutti i diritti riservati a I DON’T KNOW</div>
-    <div class="footer-small" data-i18n="phone">Telefono: +39 0123456789</div>
-    <div class="footer-small" data-i18n="email">Email: idontknow@blabla.hehe</div>
-  </footer>
+    // small bounce on end: when animation ends, add a bounce class then remove after done.
+    el.addEventListener('animationend', () => {
+      el.classList.add('bounce');
+      setTimeout(()=> {
+        // reset position to top and restart from new random horizontal pos/duration/delay
+        el.classList.remove('bounce');
+        const newStart = Math.random()*100;
+        const newSway = (Math.random()*18 - 9);
+        const newEnd = newStart + newSway;
+        const newDur = (Math.random()*10 + 6).toFixed(2) + 's';
+        const newDelay = (Math.random()*3).toFixed(2) + 's';
+        const newSize = Math.floor(Math.random()*18 + 18);
+        el.style.left = newStart + 'vw';
+        el.style.fontSize = newSize + 'px';
+        el.style.setProperty('--start-x', newStart + 'vw');
+        el.style.setProperty('--end-x', newEnd + 'vw');
+        el.style.animationDuration = newDur;
+        el.style.animationDelay = newDelay;
+        // force reflow to restart animation
+        void el.offsetWidth;
+        el.style.opacity = '1';
+      }, 700);
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
