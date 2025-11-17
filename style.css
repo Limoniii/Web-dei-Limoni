@@ -320,3 +320,12 @@ p.lead{
     line-height: 1.4;
     -webkit-text-stroke: 1px black;
 }
+
+.fade {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
