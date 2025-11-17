@@ -2,52 +2,51 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Limoni Web</title>
     <link rel="stylesheet" href="style.css">
-    <script src="translate.js"></script>
+    <script src="translate.js" defer></script>
 </head>
-
-<body class="fade">
+<body class="about-bg">
 
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">LIMONI WEB</div>
 
     <ul class="nav-links">
-        <li><a href="index.html" data-i18n="home">Home</a></li>
-        <li><a href="about.html" data-i18n="about">About</a></li>
+        <li><a href="index.html" data-key="home">Home</a></li>
+        <li><a href="about.html" data-key="about">About</a></li>
     </ul>
 
     <div class="social-icons">
-        <a href="https://instagram.com/TUO_USERNAME" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        <a href="https://instagram.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
         </a>
-
-        <a href="https://www.tiktok.com/@TUO_USERNAME" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+        <a href="https://tiktok.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
         </a>
     </div>
 
-    <!-- Language Switch -->
     <div class="lang-switch">
         <button onclick="setLanguage('it')">🇮🇹</button>
         <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 </nav>
-<!-- FINE NAVBAR -->
 
-<div class="about-bg">
-    <p class="about-text" data-i18n="aboutText">
+<!-- TESTO CENTRALE -->
+<section class="about-text">
+    <p data-key="aboutText">
         Limoni Web è come Chow: imprevedibile, brillante e con un tocco di follia.
         Fratello, questo sito è così veloce che neanche Jackie Chan riesce a starci dietro!
     </p>
-</div>
+</section>
 
-<footer class="footer">
-    <h2 class="footer-title">WEBSITE CREATED BY: I DON’T KNOW!!!</h2>
-    <p class="footer-small">Tutti i diritti riservati a I DON'T KNOW</p>
-    <p class="footer-small">Telefono: +39 0123456789</p>
-    <p class="footer-small">Email: idontknow@blabla.hehe</p>
+<!-- FOOTER -->
+<footer>
+    <h2>WEBSITE CREATED BY: I DON’T KNOW!!!</h2>
+    <p>Tutti i diritti riservati a I DON’T KNOW</p>
+    <p>Telefono: +39 0123456789</p>
+    <p>Email: idontknow@blabla.hehe</p>
 </footer>
 
 </body>
