@@ -1,115 +1,103 @@
-<!DOCTYPE html>
-<html lang="it" data-theme="dark">
+<!doctype html>
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LIMONI WEB</title>
-  <link rel="preload" href="assets/click.mp3" as="audio">
-  <link rel="preload" href="assets/explosion.mp3" as="audio">
-  <link rel="preload" href="assets/sparkle.mp3" as="audio">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
 </head>
-<body data-page="home">
-
-  <!-- Page Loader -->
-  <div id="loader">
-    <div class="progress-bar"><span class="progress"></span></div>
+<body data-theme="dark">
+  <!-- Page loader -->
+  <div id="page-loader">
+    <div class="loader-bar"><div id="loader-progress"></div></div>
   </div>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <a href="index.html" class="logo" aria-label="Home">
-        <!-- Minimal lemon logo SVG self-drawing -->
-        <svg class="lemon-svg" width="40" height="40" viewBox="0 0 100 100">
-          <defs><linearGradient id="lemonFill" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#FFE44D"/><stop offset="100%" stop-color="#FFC400"/>
-          </linearGradient></defs>
-          <path class="lemon-path" d="M50 15 C80 15, 90 50, 68 72 C50 90, 20 85, 15 55 C12 35, 25 20, 50 15 Z"
-                fill="none" stroke="#FFD600" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="65" cy="35" r="4" fill="url(#lemonFill)" opacity="0.0"/>
+  <!-- Navbar (persistente) -->
+  <header id="site-header" class="header">
+    <nav class="nav container">
+      <div class="brand" aria-hidden="true">
+        <!-- Logo: SVG auto-draw -->
+        <svg id="logo" viewBox="0 0 200 60" width="160" height="48" aria-hidden="true">
+          <!-- circle (limone) stroke animated -->
+          <path id="logo-path" d="M30 30 C30 10,70 10,70 30 C70 50,30 50,30 30 Z" fill="none" stroke="#FFD400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <text id="logo-text" x="90" y="36" font-family="Helvetica, Arial" font-size="18" fill="#fff" opacity="0">LIMONI WEB</text>
         </svg>
-        <span class="brand" data-i18n="brand">LIMONI WEB</span>
-      </a>
-    </div>
-    <nav class="nav-center">
-      <a class="nav-link" href="index.html" data-i18n="nav_home">Home</a>
-      <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
-      <a class="nav-link" href="start.html" data-i18n="nav_hacker">Limine Hacker</a>
-    </nav>
-    <div class="nav-right">
-      <div class="socials">
-        <!-- Instagram -->
-        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="2" width="20" height="20" rx="5" stroke="#fff" stroke-width="2"/>
-            <circle cx="12" cy="12" r="5" stroke="#fff" stroke-width="2"/>
-            <circle cx="18" cy="6" r="1.5" fill="#fff"/>
-          </svg>
-        </a>
-        <!-- TikTok -->
-        <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="social-btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M15 3v6.5c2 1.6 3.7 2 6 2V15c-2.7 0-4.8-0.8-6-2v3.5a5.5 5.5 0 1 1-4.5-5.4V9a7 7 0 0 0-2 .3v2.6A3.5 3.5 0 1 0 13 15V3h2z" fill="#fff"/>
-          </svg>
-        </a>
       </div>
-      <select id="lang-select" aria-label="Change language">
-        <option value="it">ITALIANO</option>
-        <option value="en">ENGLISH</option>
-        <option value="fr">FRANCE</option>
-        <option value="es">SPANISH</option>
-        <option value="ru">RUSSIAN</option>
-        <option value="zh">CHINESE</option>
-      </select>
-      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌓</button>
-    </div>
+
+      <ul class="nav-left">
+        <li><a data-i18n="nav.home" href="index.html">Home</a></li>
+        <li><a data-i18n="nav.about" href="about.html">About</a></li>
+        <li><a data-i18n="nav.hacker" href="#">Limine Hacker</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="socials">
+          <!-- Example social icons, linked placeholders -->
+          <a class="social" href="#" aria-label="Instagram" title="Instagram">
+            <!-- Inline SVG instagram -->
+            <svg viewBox="0 0 512 512" width="20" height="20"><rect width="512" height="512" rx="95" fill="white" /></svg>
+          </a>
+          <a class="social" href="#" aria-label="TikTok" title="TikTok">
+            <svg viewBox="0 0 448 512" width="20" height="20"><rect width="448" height="512" fill="white"/></svg>
+          </a>
+        </div>
+
+        <div class="lang">
+          <select id="lang-select" aria-label="Lingua">
+            <option value="it">ITALIANO</option>
+            <option value="en">ENGLISH</option>
+            <option value="fr">FRANCESE</option>
+            <option value="es">SPANISH</option>
+            <option value="ru">RUSSO</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+
+        <button id="theme-toggle" aria-label="Toggle theme">☼</button>
+      </div>
+    </nav>
   </header>
 
-  <!-- Hero background -->
-  <main class="page page-home" style="--bg-url: url('https://images.unsplash.com/photo-1598960809231-5504c3b90a6f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-    <section class="hero">
-      <h1 class="title" data-i18n="hero_title">LIMONI WEB</h1>
+  <!-- Main hero -->
+  <main id="main" class="hero" style="background-image:url('https://images.unsplash.com/photo-1598960809231-5504c3b90a6f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+    <div class="overlay"></div>
 
-      <!-- Animated minimal logo intro -->
-      <div class="animated-logo">
-        <svg class="lemon-svg large" width="140" height="140" viewBox="0 0 100 100">
-          <path class="lemon-path" d="M50 15 C80 15, 90 50, 68 72 C50 90, 20 85, 15 55 C12 35, 25 20, 50 15 Z"
-                fill="none" stroke="#FFD600" stroke-width="5" stroke-linecap="round"/>
-        </svg>
-        <div class="logo-text elegant" data-i18n="brand">LIMONI WEB</div>
+    <section class="center-stage container">
+      <div id="logo-area" class="logo-area" aria-hidden="true">
+        <!-- The SVG is drawn via JS -->
       </div>
 
-      <!-- Main button with particle animation -->
-      <button class="btn btn-primary btn-giant" id="startBtn" data-i18n="btn_start">Inizia</button>
-
-      <!-- Secondary buttons -->
-      <div class="cta-row">
-        <button class="btn btn-danger explode" data-target="israel.html" data-i18n="btn_israel">Soldato Israeliano</button>
-        <button class="btn btn-info explode" data-target="palestine.html" data-i18n="btn_palestine">Soldato Palestinese</button>
+      <div class="actions">
+        <button id="start-btn" class="btn primary" data-i18n="btn.start">Inizia</button>
       </div>
 
-      <div class="cta-row">
-        <button class="btn btn-success sparkle" data-target="signup.html" data-i18n="btn_signup">Iscriviti</button>
+      <div class="dual-buttons">
+        <button id="btn-israel" class="btn red">Soldato Israeliano</button>
+        <button id="btn-palestine" class="btn blue">Soldato Palestinese</button>
+      </div>
+
+      <div class="subscribe-wrap">
+        <button id="btn-subscribe" class="btn green">Iscriviti</button>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-main" data-i18n="footer_main">WEBSITE CREATED BY: I DON’T KNOW!!!</div>
-    <div class="footer-sub">
-      <div class="left" data-i18n="footer_rights">Tutti i diritti riservati a I DON’T KNOW</div>
-      <div class="left" data-i18n="footer_phone">Telefono: +39 0123456789</div>
-      <div class="left" data-i18n="footer_email">Email: idontknow@blabla.hehe</div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-center">
+        <div class="footer-box" data-i18n="footer.created">WEBSITE CREATED BY: I DON’T KNOW!!!</div>
+      </div>
+      <div class="footer-left">
+        <div class="footer-small" data-i18n="footer.rights">Tutti i diritti riservati a I DON’T KNOW</div>
+        <div class="footer-small">Telefono: +39 0123456789</div>
+        <div class="footer-small">Email: idontknow@blabla.hehe</div>
+      </div>
     </div>
   </footer>
 
-  <!-- Sounds -->
-  <audio id="snd-click" src="assets/click.mp3" preload="auto"></audio>
-  <audio id="snd-explosion" src="assets/explosion.mp3" preload="auto"></audio>
-  <audio id="snd-sparkle" src="assets/sparkle.mp3" preload="auto"></audio>
-
-  <script src="script.js"></script>
+  <!-- Small hidden audio via WebAudio (created in script) -->
+  <!-- Particles canvas overlay -->
+  <canvas id="particle-canvas"></canvas>
 </body>
 </html>
