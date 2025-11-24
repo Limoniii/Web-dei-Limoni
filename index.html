@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIMONI WEB</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body data-theme="dark">
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-bar"><div id="loader-progress"></div></div>
+  </div>
+
+  <!-- Navbar -->
+  <header id="site-header" class="header">
+    <nav class="nav container">
+      <div class="brand">
+        <svg id="logo" viewBox="0 0 200 60" width="160" height="48">
+          <path id="logo-path" d="M30 30 C30 10,70 10,70 30 C70 50,30 50,30 30 Z" fill="none" stroke="#FFD400" stroke-width="3"/>
+          <text id="logo-text" x="90" y="36" font-family="Helvetica" font-size="18" fill="#FFD400" opacity="0">LIMONI WEB</text>
+        </svg>
+      </div>
+      <ul class="nav-left">
+        <li><a data-i18n="nav.home" href="index.html">Home</a></li>
+        <li><a data-i18n="nav.about" href="about.html">About</a></li>
+        <li><a data-i18n="nav.hacker" href="#">Limine Hacker</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="socials">
+          <a class="social" href="#" title="Instagram"></a>
+          <a class="social" href="#" title="TikTok"></a>
+        </div>
+        <div class="lang">
+          <select id="lang-select">
+            <option value="it">ITALIANO</option>
+            <option value="en">ENGLISH</option>
+            <option value="fr">FRANCESE</option>
+            <option value="es">SPANISH</option>
+            <option value="ru">RUSSO</option>
+            <option value="zh">CINESE</option>
+          </select>
+        </div>
+        <button id="theme-toggle">☼</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero" style="background-image:url('https://images.unsplash.com/photo-1598960809231-5504c3b90a6f?q=80&w=870&auto=format&fit=crop')">
+    <div class="overlay"></div>
+    <section class="center-stage container">
+      <div id="logo-area" class="logo-area"></div>
+
+      <div class="actions">
+        <button id="start-btn" class="btn primary" data-i18n="btn.start">Inizia</button>
+      </div>
+
+      <div class="dual-buttons">
+        <button id="btn-israel" class="btn red">Soldato Israeliano</button>
+        <button id="btn-palestine" class="btn blue">Soldato Palestinese</button>
+      </div>
+
+      <div class="subscribe-wrap">
+        <button id="btn-subscribe" class="btn green">Iscriviti</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-center">
+        <div data-i18n="footer.created">WEBSITE CREATED BY: I DON’T KNOW!!!</div>
+      </div>
+      <div class="footer-left">
+        <div data-i18n="footer.rights">Tutti i diritti riservati a I DON’T KNOW</div>
+        <div>Telefono: +39 0123456789</div>
+        <div>Email: idontknow@blabla.hehe</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Canvas per particelle -->
+  <canvas id="particle-canvas"></canvas>
+
+</body>
+</html>
